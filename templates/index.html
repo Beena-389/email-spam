@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email-Spam Classification</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0%;
+            padding: 0%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            width: 100%;
+        }
+
+        body>div {
+            width: 50%;
+            height: 100vh;
+        }
+
+        .mainCon1 {
+            color: white;
+            background-color: #000000;
+            border-radius: 0 3.3vw 3.3vw 0;
+        }
+
+        .mainCon2>div {
+            width: 100%;
+            height: auto;
+            /* background-color: black;s */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        body>div>h1 {
+            height: 6vw;
+            /* background-color: brown; */
+            /* text-align: end; */
+            padding-top: 3vw;
+            font-size: 3vw;
+        }
+
+        body>div>h1>i {
+            margin-right: 0.3vw;
+        }
+
+        .head1 {
+            text-align: end;
+            padding-right: 0.2vw;
+        }
+
+        .head2 {
+            padding-left: 0.2vw;
+        }
+
+        .head3 {
+            display: none;
+        }
+
+        .aboutPro>h2,
+        .mainCon1>h3 {
+            padding-top: 4vw;
+            text-align: center;
+        }
+
+        .aboutPro>p {
+            padding: 4vw;
+            font-size: 1.3vw;
+        }
+
+        form {
+            margin-top: 20%;
+            /* background-color: aquamarine; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        form>div {
+            margin: 0.4vw 0 0.4vw 0;
+            font-size: 1.8vw;
+            display: flex;
+            padding: 0 7vw 0 7vw;
+            width: 100%;
+            /* background-color: beige; */
+            justify-content: space-between;
+        }
+
+        form>div>input {
+            width: 50%;
+            border-radius: 0.4vw;
+            border: 2px solid #000000;
+        }
+
+        form>div>input[type=text] {
+            font-size: 1vw;
+            padding: 0.4vw;
+        }
+
+        form>button {
+            font-size: 1.8vw;
+            margin: 0.4vw 7vw 0.4vw 7vw;
+            border-radius: 0.4vw;
+            border: none;
+            background-color: #000000;
+            color: white;
+            padding: 0.3vw 0 0.3vw 0;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        form>button:hover {
+            box-shadow: none;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1.1vw;
+            /* background-color: aqua; */
+            padding: 1.5vw;
+        }
+
+
+        @media screen and (max-width: 608px) {
+            body {
+                flex-direction: column;
+            }
+
+            body>div {
+                width: 100%;
+                height: 70vw;
+            }
+
+            .head1,
+            .head2 {
+                display: none;
+            }
+
+            .head3 {
+                display: block;
+                text-align: center;
+                font-size: 5vw;
+            }
+
+            .aboutPro>h2 {
+                font-size: 3vw;
+                margin-top: 2vw;
+            }
+
+            .aboutPro>p {
+                font-size: 3vw;
+            }
+
+            .mainCon1>h3 {
+                font-size: 2vw;
+            }
+
+            form>button {
+                font-size: 3.8vw;
+                margin: 1.8vw 7vw 0.4vw 7vw;
+                border-radius: 1vw;
+                padding: 0.7vw 0 0.7vw 0;
+            }
+
+            form>div {
+                font-size: 3.8vw;
+            }
+
+            form>div>input {
+                width: 50%;
+                border: 0.1vw solid #000000;
+                border-radius: 0.4vw;
+                border: 2px solid #000000;
+            }
+
+            form>div>input[type=text] {
+                font-size: 2vw;
+                padding: 0.4vw;
+            }
+
+            .mainCon2>div>p {
+                font-size: 4.1vw;
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainCon1">
+       <h1 class="head1">Email-Sp</h1> 
+        <h1 class="head3">Email Spam Classification</h1>
+        <div class="aboutPro">
+            <h2>About the Project</h2>
+            <p>Email is the worldwide use of communication application. It is because of the ease of use  and  faster  than  other  communication  application.  However,  its  inability  to  detect whether  the  mail content  is  either  spam  or  ham  degrade  its  performance.  Nowadays, lot of cases have been reported regarding stealing of personal information or phishing activities via email from the user. This project will discuss how machine learning help in  spam  detection.  Machine  learning  is  an  artificial  intelligence  application  that provides  the  ability  to  automatically  learn  and  improve  data  without  being  explicitly programmed.  Binary  classifier  will  be  used  to  classify  the  text  into  two  different categories; spam andham. The algorithm will predict the score more accurately. The objective of developing this model is to detect and score word faster and accurately.
+</p>
+        </div>
+        <h3>The Project is made By Beena,Mandeep,Manpreet</h3>
+    </div>
+    <div class="mainCon2">
+        <h1 class="head2">am Classification</h1>
+        <div>
+            <form action='/predict' method="post">
+                <div>
+                    <label for="text2">Email: </label>
+                    <input type="text" name="email" placeholder="subject of email" required>
+                
+                </div>
+                <button type="submit">Predict</button>
+            </form>
+            <p>{{pred}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -7,6 +7,5 @@ MarkupSafe
 Werkzeug
 pandas
 pickle5
-string
-nltk
+
 
